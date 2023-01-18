@@ -1,7 +1,10 @@
 (function exportController() {
     class Controller {
-        constructor() {
+        constructor(ship) {
+            this.ship = ship;
+
             this.initialiseSea();
+            
         }
 
         initialiseSea() {
@@ -34,7 +37,9 @@
             })
         }
 
-        renderShip(ship){
+        renderShip(){
+            const ship = this.ship
+
             const shipPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
             const portElement = document.querySelector(`[data-port-index='${shipPortIndex}']`);
 
