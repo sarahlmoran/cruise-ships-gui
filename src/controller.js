@@ -5,6 +5,9 @@
 
             this.initialiseSea();
             
+            document.querySelector("#sailbutton").addEventListener('click', () => {
+                this.setSail();
+            });
         }
 
         initialiseSea() {
@@ -47,6 +50,8 @@
             shipElement.style.top = `${portElement.offsetTop + 32}px`;
             shipElement.style.left = `${portElement.offsetLeft - 32}px`;
         }
+
+        setSail(){}
     }
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Controller;
