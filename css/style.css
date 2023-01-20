@@ -12,6 +12,18 @@ body {
     align-items: center;
 }
 
+#message{
+    border:0;
+    background-color: white;
+    color: black;
+    font-family: inherit;
+    padding: 16px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
 #sailbutton {
     border: 0;
     background-color: #fb3640;

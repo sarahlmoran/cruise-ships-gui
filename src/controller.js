@@ -76,6 +76,16 @@
             
             
         }
+
+        renderMessage(message){
+            
+            const messageElement = document.createElement('div');
+            messageElement.id = 'message';
+            messageElement.innerHTML = message;
+
+            const viewPortElement = document.querySelector('#viewport');
+            viewPortElement.appendChild(messageElement);
+        }
     }
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Controller;
