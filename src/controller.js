@@ -51,7 +51,31 @@
             shipElement.style.left = `${portElement.offsetLeft - 32}px`;
         }
 
-        setSail(){}
+        setSail(){
+            const ship = this.ship
+            
+            const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+            const nextPortIndex = currentPortIndex + 1;
+            const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+
+            if (currentPortIndex === ship.itinerary.ports.length -1){
+                alert("You are at the end of your itinerary, please disembark");
+            };
+
+            const shipElement = document.querySelector('#ship');
+            const sailing = setInterval(() => {
+                const shipLeft = parseInt(shipElement.style.left, 10);
+                if(shipLeft === (nextPortElement.offsetLeft - 32)){
+                ship.setSail();
+                ship.dock();
+                clearInterval(sailing);
+                }
+             
+                shipElement.style.left = `${shipLeft + 1}px`;
+            }, 5);
+            
+            
+        }
     }
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Controller;
