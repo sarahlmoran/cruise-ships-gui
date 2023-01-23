@@ -12,6 +12,28 @@ body {
     align-items: center;
 }
 
+#currentport {
+    border:0;
+    padding: 16px;
+    color: white;
+    font-family: inherit;
+    position: absolute;
+    top: 0;
+    right:0;
+    font-family: 'Oswald', sans-serif;
+}
+
+ #nextport{
+    border: 0;
+    padding: 16px;
+    color:white;  
+    font-family: inherit;
+    position: absolute;
+    top: 0.1;
+    right: 0;
+    font-family: 'Oswald', sans-serif; 
+}
+
 #message{
     border:0;
     background-color: white;
