@@ -99,11 +99,22 @@
         }
 
         headsUpDisplay(){
-            const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
-            const hud = document.querySelector('#currentport');
-            hud.innerHTML = (`Current port: ${ship.currentPort.name} <br>
-            Next port: ${ship.itinerary.ports[currentPortIndex + 1].name}`);
+            if(this.ship.itinerary.ports.length > 0){
+                const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+                const nextPortIndex = currentPortIndex + 1;
+
+                let message = `Current Port: ${ship.itinerary.ports[currentPortIndex].name}`;
+                if (nextPortIndex < this.ship.itinerary.ports.length){
+                    message += `<br>Next Port: ${ship.itinerary.ports[nextPortIndex].name}`;
+                } else message = `Current Port: ${ship.itinerary.ports[currentPortIndex].name}<br> Next Port: End of Itinerary`;
+                document.getElementById('hud').innerHTML = message;
+            }
+
         }
+                    //const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+            //const hud = document.querySelector('#currentport');
+            //hud.innerHTML = (`Current port: ${ship.currentPort.name} <br>
+            //Next port: ${ship.itinerary.ports[currentPortIndex + 1].name}`);
     }
     if (typeof module !== 'undefined' && module.exports) {
         module.exports = Controller;

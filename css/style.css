@@ -12,7 +12,7 @@ body {
     align-items: center;
 }
 
-#currentport {
+#hud {
     border:0;
     padding: 16px;
     color: white;
