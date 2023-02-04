@@ -1,4 +1,5 @@
 const Ship = require("../src/ship");
+const Itinerary = require("../src/itinerary");
 
 describe("Ship", () => {
   describe("with ports and an itinerary", () => {
@@ -22,11 +23,7 @@ describe("Ship", () => {
         ships: [],
       };
 
-      itinerary = {
-        ports: [newcastle, amsterdam],
-      };
-
-      //itinerary = new Itinerary ([newcastle, amsterdam]);
+      itinerary = new Itinerary ([newcastle, amsterdam]);
 
       ship = new Ship(itinerary);
     });
@@ -47,7 +44,7 @@ describe("Ship", () => {
 
       expect(ship.currentPort).toBeFalsy();
       expect(newcastle.removeShip).toHaveBeenCalledWith(ship);
-      //expect (ship.previousPort).toBe(itinerary);
+      expect (ship.previousPort).toBe(newcastle);
     });
 
     it("throws an error if you try to sail past the last port in the itinerary", () => {
